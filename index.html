@@ -374,40 +374,39 @@
         border-bottom: 0;
       }
 
-      .table-stack { min-width: 0; }
-
-      .table-stack td:first-child,
-      .table-stack th:first-child {
-        width: 25%;
+      .role-grid,
+      .proposal-grid {
+        display: grid;
+        gap: 12px;
       }
 
-      @media (max-width: 640px) {
-        .table-stack thead { display: none; }
-
-        .table-stack tr {
-          display: block;
-          border-bottom: 1px solid var(--line);
-          padding: 12px 0;
-        }
-
-        .table-stack tr:last-child { border-bottom: 0; }
-
-        .table-stack td {
-          display: block;
-          border-bottom: 0;
-          padding: 4px 12px;
-        }
-
-        .table-stack td::before {
-          content: attr(data-label);
-          display: block;
-          font-size: 0.72rem;
-          text-transform: uppercase;
-          color: var(--green);
-          font-weight: 700;
-          margin-bottom: 3px;
-        }
+      .role-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 28px;
       }
+
+      .proposal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 18px;
+      }
+
+      .role-item,
+      .proposal-item {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        background: var(--paper-card);
+      }
+
+      .role-item h3,
+      .proposal-item h3 {
+        color: var(--green);
+        margin-bottom: 8px;
+      }
+
+      .role-item p,
+      .proposal-item p {
+        margin-bottom: 0;
       }
 
       .moment {
@@ -548,6 +547,8 @@
         .grid-2,
         .metrics-grid,
         .gtm-grid,
+        .role-grid,
+        .proposal-grid,
         .proposal {
           grid-template-columns: 1fr;
         }
@@ -910,18 +911,23 @@
       <div class="section-inner">
         <p class="eyebrow">07 · Equipo</p>
         <h2>Estructura ligera, especializada y escalable.</h2>
-        <div class="table-wrap" style="margin-top: 28px">
-          <table class="table-stack">
-            <thead>
-              <tr><th>Rol</th><th>Perfil</th></tr>
-            </thead>
-            <tbody>
-              <tr><td data-label="Rol">Fundadora</td><td data-label="Perfil">Lissette: estrategia, marca, producto y operaciones. Más de 19 años en sistemas de gestión de calidad, seguridad de la información y medioambiente; origen directo de su forma de trabajar con proveedores, verificar ingredientes y garantizar compliance regulatorio. Fundadora de Kōoch Green Cosmetics.</td></tr>
-              <tr><td data-label="Rol">Nutricionista asesora</td><td data-label="Perfil">Aval científico público, validación de fórmulas y comunicación. Perfil en proceso de confirmación.</td></tr>
-              <tr><td data-label="Rol">Freelancers especializados</td><td data-label="Perfil">Diseño, desarrollo web, copywriting y paid media. Estructura variable hasta tener base económica sólida.</td></tr>
-              <tr><td data-label="Rol">Fabricante</td><td data-label="Perfil">Fabricante seleccionado para lote 1 e ingredientes patentados con dosis verificables.</td></tr>
-            </tbody>
-          </table>
+        <div class="role-grid">
+          <article class="role-item">
+            <h3>Fundadora</h3>
+            <p>Lissette: estrategia, marca, producto y operaciones. Más de 19 años en sistemas de gestión de calidad, seguridad de la información y medioambiente; origen directo de su forma de verificar proveedores, ingredientes y compliance regulatorio. Fundadora de Kōoch Green Cosmetics.</p>
+          </article>
+          <article class="role-item">
+            <h3>Nutricionista asesora</h3>
+            <p>Aval científico público, validación de fórmulas y comunicación. Perfil en proceso de confirmación.</p>
+          </article>
+          <article class="role-item">
+            <h3>Freelancers especializados</h3>
+            <p>Diseño, desarrollo web, copywriting y paid media. Estructura variable hasta tener base económica sólida.</p>
+          </article>
+          <article class="role-item">
+            <h3>Fabricante</h3>
+            <p>Fabricante seleccionado para lote 1 e ingredientes patentados con dosis verificables.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -947,18 +953,23 @@
             alguien cuya experiencia y red sean tan valiosas como el ticket. Si hay encaje
             estratégico real, eso vale más que cualquier cantidad de dinero sin contexto.
           </p>
-          <div class="table-wrap">
-            <table class="table-stack">
-              <thead>
-                <tr><th>Concepto</th><th>Detalle</th></tr>
-              </thead>
-              <tbody>
-                <tr><td data-label="Concepto">Estructura</td><td data-label="Detalle">Abierta a conversación: equity, préstamo participativo u otro formato según encaje estratégico.</td></tr>
-                <tr><td data-label="Concepto">Financiación complementaria</td><td data-label="Detalle">Se están explorando subvenciones y programas públicos compatibles con inversión privada. No es una apuesta; es parte de la forma de gestionar el negocio.</td></tr>
-                <tr><td data-label="Concepto">Lo que encuentra el inversor</td><td data-label="Detalle">Márgenes &gt;70%, fórmula verificable sin competidor directo claro en España y fundadora con track record real.</td></tr>
-                <tr><td data-label="Concepto">Próximo paso</td><td data-label="Detalle">Reunión privada para resolver dudas técnicas, financieras o de modelo de negocio.</td></tr>
-              </tbody>
-            </table>
+          <div class="proposal-grid">
+            <article class="proposal-item">
+              <h3>Estructura</h3>
+              <p>Abierta a conversación: equity, préstamo participativo u otro formato según encaje estratégico.</p>
+            </article>
+            <article class="proposal-item">
+              <h3>Financiación complementaria</h3>
+              <p>Se están explorando subvenciones y programas públicos compatibles con inversión privada. No es una apuesta; es parte de la forma de gestionar el negocio.</p>
+            </article>
+            <article class="proposal-item">
+              <h3>Lo que encuentra el inversor</h3>
+              <p>Márgenes &gt;70%, fórmula verificable sin competidor directo claro en España y fundadora con track record real.</p>
+            </article>
+            <article class="proposal-item">
+              <h3>Próximo paso</h3>
+              <p>Reunión privada para resolver dudas técnicas, financieras o de modelo de negocio.</p>
+            </article>
           </div>
           <p style="margin-top: 18px">
             <a class="button primary" href="mailto:hola@koochsync.com">Abrir conversación privada</a>
