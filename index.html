@@ -374,6 +374,37 @@
         border-bottom: 0;
       }
 
+      @media (max-width: 640px) {
+        .table-stack { min-width: 0; }
+
+        .table-stack thead { display: none; }
+
+        .table-stack tr {
+          display: block;
+          border-bottom: 1px solid var(--line);
+          padding: 12px 0;
+        }
+
+        .table-stack tr:last-child { border-bottom: 0; }
+
+        .table-stack td {
+          display: block;
+          border-bottom: 0;
+          padding: 4px 12px;
+        }
+
+        .table-stack td::before {
+          content: attr(data-label);
+          display: block;
+          font-size: 0.72rem;
+          text-transform: uppercase;
+          color: var(--green);
+          font-weight: 700;
+          margin-bottom: 3px;
+        }
+      }
+      }
+
       .moment {
         position: relative;
         overflow: hidden;
@@ -905,15 +936,15 @@
             estratégico real, eso vale más que cualquier cantidad de dinero sin contexto.
           </p>
           <div class="table-wrap">
-            <table>
+            <table class="table-stack">
               <thead>
                 <tr><th>Concepto</th><th>Detalle</th></tr>
               </thead>
               <tbody>
-                <tr><td>Estructura</td><td>Abierta a conversación: equity, préstamo participativo u otro formato según encaje estratégico.</td></tr>
-                <tr><td>Financiación complementaria</td><td>Se están explorando subvenciones y programas públicos compatibles con inversión privada. No es una apuesta; es parte de la forma de gestionar el negocio.</td></tr>
-                <tr><td>Lo que encuentra el inversor</td><td>Márgenes &gt;70%, fórmula verificable sin competidor directo claro en España y fundadora con track record real.</td></tr>
-                <tr><td>Próximo paso</td><td>Reunión privada para resolver dudas técnicas, financieras o de modelo de negocio.</td></tr>
+                <tr><td data-label="Concepto">Estructura</td><td data-label="Detalle">Abierta a conversación: equity, préstamo participativo u otro formato según encaje estratégico.</td></tr>
+                <tr><td data-label="Concepto">Financiación complementaria</td><td data-label="Detalle">Se están explorando subvenciones y programas públicos compatibles con inversión privada. No es una apuesta; es parte de la forma de gestionar el negocio.</td></tr>
+                <tr><td data-label="Concepto">Lo que encuentra el inversor</td><td data-label="Detalle">Márgenes &gt;70%, fórmula verificable sin competidor directo claro en España y fundadora con track record real.</td></tr>
+                <tr><td data-label="Concepto">Próximo paso</td><td data-label="Detalle">Reunión privada para resolver dudas técnicas, financieras o de modelo de negocio.</td></tr>
               </tbody>
             </table>
           </div>
