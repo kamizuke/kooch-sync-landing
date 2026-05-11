@@ -378,8 +378,7 @@
 
       .table-stack td:first-child,
       .table-stack th:first-child {
-        width: 180px;
-        white-space: nowrap;
+        width: 25%;
       }
 
       @media (max-width: 640px) {
@@ -499,10 +498,11 @@
       }
 
       .proposal-big {
-        display: grid;
-        align-content: center;
+        display: flex;
+        align-items: center;
+        gap: 40px;
         border-radius: 8px;
-        padding: 28px;
+        padding: 28px 36px;
         color: var(--cream);
         background: linear-gradient(135deg, var(--kooch-green-deep), var(--carbon));
       }
@@ -510,6 +510,12 @@
       .proposal-big strong {
         font-size: clamp(3rem, 7vw, 6rem);
         line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .proposal-big > p {
+        margin: 0;
+        opacity: 0.82;
       }
 
       .footer {
@@ -554,8 +560,10 @@
           max-width: 460px;
         }
 
-        .footer-inner {
+        .footer-inner,
+        .proposal-big {
           flex-direction: column;
+          gap: 12px;
         }
       }
 
@@ -899,12 +907,10 @@
     </section>
 
     <section class="band">
-      <div class="section-inner split">
-        <div>
-          <p class="eyebrow">07 · Equipo</p>
-          <h2>Estructura ligera, especializada y escalable.</h2>
-        </div>
-        <div class="table-wrap">
+      <div class="section-inner">
+        <p class="eyebrow">07 · Equipo</p>
+        <h2>Estructura ligera, especializada y escalable.</h2>
+        <div class="table-wrap" style="margin-top: 28px">
           <table class="table-stack">
             <thead>
               <tr><th>Rol</th><th>Perfil</th></tr>
@@ -921,8 +927,8 @@
     </section>
 
     <section id="propuesta">
-      <div class="section-inner proposal">
-        <div class="proposal-big">
+      <div class="section-inner">
+        <div class="proposal-big" style="margin-bottom: 24px">
           <span class="eyebrow">08 · La propuesta</span>
           <strong>50.000 €</strong>
           <p>Inversión solicitada para estructura operativa 12 meses + lanzamiento DTC completo.</p>
