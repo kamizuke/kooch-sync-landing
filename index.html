@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kōoch Sync · Sistema D·E·N</title>
+    <meta
+      name="description"
+      content="Landing privada de Kōoch Sync D·E·N: sistema de suplementación femenina premium, lanzamiento DTC y propuesta de inversión 2026."
+    />
+    <style>
+      :root {
+        --kooch-green: #9ac0ae;
+        --kooch-green-deep: #6d9985;
+        --kooch-green-pale: #d6e4dc;
+        --kooch-green-mist: #ecf2ee;
+        --beige-topo: #c4b2a0;
+        --beige-pale: #efe8df;
+        --rosa-arena: #e8c4b0;
+        --rosa-pale: #f8ede5;
+        --carbon: #2e2e2e;
+        --carbon-soft: #5a5a5a;
+        --paper: #fafaf7;
+        --paper-card: #ffffff;
+        --line: #e5dfd4;
+        --ink: var(--carbon);
+        --green: var(--kooch-green-deep);
+        --gold: var(--beige-topo);
+        --coral: #b8755a;
+        --cream: var(--paper);
+        --mist: var(--kooch-green-mist);
+        --shadow: 0 20px 60px rgba(46, 46, 46, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+        padding: 14px clamp(18px, 4vw, 56px);
+        border-bottom: 1px solid rgba(250, 250, 247, 0.18);
+        color: var(--cream);
+        background: rgba(46, 46, 46, 0.94);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      .brand strong {
+        font-size: 1.28rem;
+        font-weight: 500;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        font-size: 0.9rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        opacity: 0.86;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        color: var(--paper-card);
+        background: var(--kooch-green-deep);
+      }
+
+      .button.light {
+        color: var(--ink);
+        background: var(--paper-card);
+      }
+
+      .hero {
+        padding: clamp(72px, 9vw, 120px) clamp(20px, 5vw, 72px) clamp(52px, 7vw, 88px);
+        color: var(--cream);
+        background:
+          radial-gradient(circle at 84% 24%, rgba(196, 178, 160, 0.28), transparent 28%),
+          linear-gradient(135deg, var(--carbon), #3d5449 58%, var(--kooch-green-deep));
+      }
+
+      .hero-grid {
+        width: min(1160px, 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.04fr) minmax(260px, 0.72fr);
+        gap: clamp(34px, 6vw, 74px);
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--gold);
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3.2rem, 8vw, 7.2rem);
+        font-weight: 500;
+        line-height: 0.95;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+        margin-bottom: 28px;
+        color: rgba(250, 250, 247, 0.86);
+        font-size: clamp(1.1rem, 2vw, 1.36rem);
+      }
+
+      .hero-card {
+        border: 1px solid rgba(250, 250, 247, 0.22);
+        border-radius: 8px;
+        padding: 22px;
+        background: rgba(250, 250, 247, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card img {
+        display: block;
+        width: 100%;
+        margin-bottom: 14px;
+        border-radius: 6px;
+      }
+
+      .hero-card p {
+        margin: 0;
+        color: rgba(250, 250, 247, 0.72);
+        font-size: 0.9rem;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .fact {
+        border-top: 1px solid rgba(250, 250, 247, 0.3);
+        padding-top: 12px;
+        color: rgba(250, 250, 247, 0.72);
+      }
+
+      .fact strong {
+        display: block;
+        color: var(--cream);
+        font-size: 1.34rem;
+      }
+
+      section {
+        padding: clamp(58px, 8vw, 100px) clamp(20px, 5vw, 72px);
+      }
+
+      .section-inner {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+        gap: clamp(28px, 6vw, 70px);
+        align-items: start;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 500;
+        line-height: 1.03;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1.02rem;
+      }
+
+      .lead {
+        color: rgba(46, 46, 46, 0.72);
+        font-size: 1.08rem;
+      }
+
+      .band {
+        background: var(--kooch-green-mist);
+      }
+
+      .dark {
+        color: var(--cream);
+        background: var(--carbon);
+      }
+
+      .dark .lead,
+      .dark .muted {
+        color: rgba(250, 250, 247, 0.72);
+      }
+
+      .grid-3,
+      .grid-2,
+      .metrics-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .milestone-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .grid-2,
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+        background: var(--paper-card);
+        box-shadow: 0 1px 0 rgba(46, 46, 46, 0.03);
+      }
+
+      .dark .card {
+        color: var(--ink);
+      }
+
+      .muted {
+        color: rgba(46, 46, 46, 0.64);
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper-card);
+      }
+
+      table {
+        width: 100%;
+        min-width: 680px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        padding: 13px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--green);
+        background: var(--kooch-green-mist);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .moment {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .moment::before {
+        content: attr(data-letter);
+        position: absolute;
+        top: 8px;
+        right: 18px;
+        color: rgba(109, 153, 133, 0.12);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 6rem;
+        line-height: 1;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        margin-bottom: 12px;
+        padding: 0 10px;
+        border-radius: 999px;
+        color: var(--green);
+        background: var(--kooch-green-mist);
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+
+      .metric {
+        border-left: 4px solid var(--gold);
+        background: linear-gradient(90deg, rgba(214, 228, 220, 0.44), transparent);
+        padding: 12px 0 12px 18px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: clamp(1.75rem, 4vw, 3rem);
+        line-height: 1;
+      }
+
+      .callout {
+        border-left: 4px solid var(--rosa-arena);
+        margin-top: 18px;
+        padding: 18px 20px;
+        background: var(--rosa-pale);
+      }
+
+      .callout p:last-child {
+        margin-bottom: 0;
+      }
+
+      .gtm-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gtm-item {
+        display: grid;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+        background: linear-gradient(180deg, var(--paper-card), var(--kooch-green-mist));
+      }
+
+      .gtm-item strong {
+        color: var(--green);
+        font-size: 1.3rem;
+      }
+
+      .gtm-item h3 {
+        margin: 0;
+      }
+
+      .gtm-item p {
+        margin: 0;
+      }
+
+      .proposal {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .proposal-big {
+        display: grid;
+        align-content: center;
+        border-radius: 8px;
+        padding: 28px;
+        color: var(--cream);
+        background: linear-gradient(135deg, var(--kooch-green-deep), var(--carbon));
+      }
+
+      .proposal-big strong {
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 1;
+      }
+
+      .footer {
+        padding: 32px clamp(20px, 5vw, 72px);
+        color: rgba(250, 250, 247, 0.72);
+        background: var(--carbon);
+      }
+
+      .footer-inner {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 920px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-grid,
+        .split,
+        .grid-3,
+        .milestone-grid,
+        .grid-2,
+        .metrics-grid,
+        .gtm-grid,
+        .proposal {
+          grid-template-columns: 1fr;
+        }
+
+        .facts {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .hero-card {
+          max-width: 460px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .milestone-grid,
+        .facts {
+          grid-template-columns: 1fr;
+        }
+
+        .brand span {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Principal">
+      <div class="brand"><strong>Kōoch Sync</strong><span>Sistema D·E·N</span></div>
+      <div class="nav-links">
+        <a href="#problema">Problema</a>
+        <a href="#sistema">Sistema</a>
+        <a href="#economics">Economics</a>
+        <a href="#propuesta">Propuesta</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Anzara Labs · Documento confidencial 2026</p>
+          <h1>Kōoch Sync D·E·N</h1>
+          <p class="hero-copy">
+            Sistema de suplementación fisiológica para la mujer activa de 35-50:
+            foco sin cafeína, recuperación nocturna sin melatonina externa y una tercera
+            fase de hidratación funcional premium.
+          </p>
+          <a class="button light" href="#propuesta">Ver propuesta</a>
+          <div class="facts">
+            <div class="fact"><strong>50.000 €</strong>Inversión solicitada</div>
+            <div class="fact"><strong>14.500 €</strong>Lote 1 financiado por la fundadora</div>
+            <div class="fact"><strong>&gt;70%</strong>Margen blended desde lote 1</div>
+            <div class="fact"><strong>DTC</strong>Canal exclusivo de lanzamiento</div>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <img src="kooch-sync-den-product-mockup.png" alt="Mockup provisional DAY y NIGHT" />
+          <p>
+            Mockup visual provisional. La conversación actual es de negocio, inversión,
+            validación DTC y credibilidad científica; el packaging final vendrá después.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <section id="problema">
+      <div class="section-inner split">
+        <div>
+          <p class="eyebrow">01 · La diana</p>
+          <h2>La suplementación española no habla bien a esta mujer.</h2>
+        </div>
+        <div>
+          <p class="lead">
+            Hay cafeína para el foco y melatonina para el sueño. El mercado tiene productos,
+            pero falla en dosis, perfil fisiológico femenino y coherencia entre foco y descanso.
+          </p>
+          <p>
+            La mujer activa entre 35 y 50 años entrena, trabaja y cuida su salud. El mercado
+            deportivo le habla con lenguaje masculino y estimulantes. El mercado farmacéutico
+            la trata como paciente antes de tiempo. Kōoch Sync existe para esa mujer que no se
+            ve en ninguna de esas dos estanterías.
+          </p>
+          <div class="callout">
+            <h3>El océano rojo no es el mercado, es la forma de formular.</h3>
+            <p>
+              El mercado de suplementos está saturado de listas largas y dosis cosméticas,
+              pensadas para impresionar en etiqueta. Kōoch Sync entra con dosis clínicas
+              verificables, formas químicas activas y un sistema que trata DAY y NIGHT como
+              una unidad fisiológica.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-inner">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Segmento</th><th>Lo que ofrece</th><th>Dónde falla</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mercado deportivo</td>
+                <td>Cafeína, proteína, foco de alto rendimiento</td>
+                <td>Lenguaje masculino, estimulantes, sin eje hormonal femenino</td>
+              </tr>
+              <tr>
+                <td>Mercado farmacéutico</td>
+                <td>Isoflavonas, melatonina, gestión de síntomas</td>
+                <td>La patologiza antes de tiempo: habla de menopausia, no de rendimiento</td>
+              </tr>
+              <tr>
+                <td>Kōoch Sync</td>
+                <td>Sistema fisiológico femenino sin estimulantes ni hormonas externas</td>
+                <td>Nuevo territorio de marca: requiere educación y credibilidad pública</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="sistema">
+      <div class="section-inner">
+        <p class="eyebrow">02 · Sistema D·E·N</p>
+        <h2>No es una línea de suplementos. Es un protocolo.</h2>
+        <div class="grid-3">
+          <article class="card moment" data-letter="D">
+            <span class="status">Lanzamiento</span>
+            <h3>DAY · Mañana laboral</h3>
+            <p>
+              Foco cognitivo y energía mitocondrial sin cafeína. 3 cápsulas HPMC,
+              22 tomas en ciclo lunes a viernes. PVP 49 €.
+            </p>
+            <p class="muted">CoQ10 Ubiquinol Kaneka® + Citicolina + ALCAR + enXtra®.</p>
+          </article>
+          <article class="card moment" data-letter="E">
+            <span class="status">Fase 2</span>
+            <h3>ENTRENO · Esfuerzo físico</h3>
+            <p>
+              Hidratación funcional premium basada en fermentación. Completa el sistema
+              en una segunda fase, una vez validado DAY + NIGHT.
+            </p>
+            <p class="muted">No depende del lanzamiento inicial.</p>
+          </article>
+          <article class="card moment" data-letter="N">
+            <span class="status">Lanzamiento</span>
+            <h3>NIGHT · Noche</h3>
+            <p>
+              Recuperación nocturna profunda. Activa melatonina endógena sin suministrarla.
+              Doypack 240 g, 30 tomas. PVP 39 €.
+            </p>
+            <p class="muted">Glicina 3.500 mg + Myo-Inositol 2 g + KSM-66® + Puretheanine®.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="section-inner split">
+        <div>
+          <p class="eyebrow">03 · Por qué ahora</p>
+          <h2>La perimenopausia salió de la consulta y entró en cultura.</h2>
+        </div>
+        <div>
+          <p class="lead">
+            Las mujeres de 35-50 están informadas, buscan activamente y tienen poder
+            adquisitivo. El DTC de salud femenina premium crece porque la conversación
+            dejó de ser solo médica.
+          </p>
+          <div class="grid-3">
+            <div>
+              <h3>Demanda informada</h3>
+              <p class="muted">Los ingredientes con evidencia son argumento de venta, no barrera.</p>
+            </div>
+            <div>
+              <h3>Mercado fragmentado</h3>
+              <p class="muted">No hay líder claro en suplementación femenina premium sin cafeína ni melatonina.</p>
+            </div>
+            <div>
+              <h3>EFSA como ventaja</h3>
+              <p class="muted">La compliance explícita puede convertirse en señal de confianza.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="economics">
+      <div class="section-inner split">
+        <div>
+          <p class="eyebrow">04 · Unit economics</p>
+          <h2>El negocio no depende del volumen. Depende de la retención.</h2>
+          <p class="lead">
+            Una clienta que compra el stack tres meses seguidos genera 264 € de revenue
+            con un CAC estimado de 25-45 €. Ese es el dato que el lote 1 debe demostrar.
+          </p>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric"><strong>25-45 €</strong><span>CAC estimado DTC España</span></div>
+          <div class="metric"><strong>~264 €</strong><span>LTV a 3 meses con stack</span></div>
+          <div class="metric"><strong>~6x</strong><span>LTV:CAC con CAC midpoint 35 €</span></div>
+          <div class="metric"><strong>47.900 €</strong><span>Revenue potencial lote 1 vendido</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-inner">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Producto</th><th>PVP</th><th>COGS lote 1</th><th>Margen lote 1</th><th>Margen lote 2+</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>DAY · 22 tomas</td><td>49 €</td><td>18,35 € *</td><td>62,6%</td><td>76,8%</td></tr>
+              <tr><td>NIGHT · 30 tomas</td><td>39 €</td><td>8,89 €</td><td>77,2%</td><td>77,2%</td></tr>
+              <tr><td>Stack DAY + NIGHT</td><td>88 €</td><td>—</td><td>~70%</td><td>~77%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted" style="margin-top: 12px">
+          * COGS lote 1 DAY incluye parte proporcional del excedente Kaneka® Ubiquinol reservado para lote 2.
+        </p>
+        <div class="callout">
+          <h3>MOQ Kaneka®: controlar stock sin perder inversión.</h3>
+          <p>
+            El Kaneka® Ubiquinol tiene un MOQ de 5 kg. Para 500 unidades DAY solo se necesitan
+            aproximadamente 1,5 kg. En vez de fabricar más volumen del necesario, el excedente
+            estimado de 3,5 kg queda reservado para el lote 2: primer lote pequeño, riesgo de
+            inventario controlado y margen DAY más alto en la siguiente producción.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner split">
+        <div>
+          <p class="eyebrow">05 · Go-to-market</p>
+          <h2>DTC exclusivo. Sin retail, sin Amazon, sin intermediarios al inicio.</h2>
+        </div>
+        <div>
+          <p class="lead">
+            El control de la relación con la clienta y del margen son prioritarios.
+            Los 50.000 € financian estructura operativa y lanzamiento; la fabricación
+            del lote inaugural ya está financiada por la fundadora.
+          </p>
+          <div class="gtm-grid">
+            <article class="gtm-item">
+              <strong>~30.000 €</strong>
+              <h3>Estructura operativa 12 meses</h3>
+              <p>Salario fundadora + SS empresa. Runway para demostrar PMF sin presión.</p>
+            </article>
+            <article class="gtm-item">
+              <strong>~2.000 €</strong>
+              <h3>Nutricionista asesora pública</h3>
+              <p>Activo de credibilidad inmediato para sostener precio y claims prudentes.</p>
+            </article>
+            <article class="gtm-item">
+              <strong>~8.000 €</strong>
+              <h3>Paid social Meta</h3>
+              <p>Primeras clientas, CAC real y audiencias de retargeting.</p>
+            </article>
+            <article class="gtm-item">
+              <strong>~4.000 €</strong>
+              <h3>Micro-influencers 35-50</h3>
+              <p>Gifting + fees selectivos en 8-10 perfiles reales. Sin mega-influencers.</p>
+            </article>
+            <article class="gtm-item">
+              <strong>~700 €</strong>
+              <h3>Email marketing + automatización</h3>
+              <p>Bienvenida, retención, reactivación y activación de la base Kōoch Green.</p>
+            </article>
+            <article class="gtm-item">
+              <strong>~1.300 €</strong>
+              <h3>Diseño freelance</h3>
+              <p>Identidad, packaging, activos digitales y materiales de lanzamiento.</p>
+            </article>
+            <article class="gtm-item">
+              <strong>~2.000 €</strong>
+              <h3>Sampling estratégico</h3>
+              <p>Muestras para nutricionistas, fisioterapeutas y comunidades target.</p>
+            </article>
+            <article class="gtm-item">
+              <strong>~2.000 €</strong>
+              <h3>Herramientas, ops y contingencia</h3>
+              <p>E-commerce, analítica, email platform e imprevistos operativos.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="section-inner">
+        <p class="eyebrow">Hitos</p>
+        <h2>Lo que valida la tesis.</h2>
+        <div class="milestone-grid">
+          <article class="card">
+            <h3>Pre-launch</h3>
+            <p>Nutricionista asesora confirmada y fabricación validada. El producto existe y el primer anclaje de confianza está en marcha.</p>
+          </article>
+          <article class="card">
+            <h3>Lanzamiento</h3>
+            <p>Primeras 50 ventas. CAC real validado y conversión de página comprobada con clientas del target.</p>
+          </article>
+          <article class="card">
+            <h3>Mes 4-6</h3>
+            <p>Datos de retención del mes 2. Con retención &gt;30%, el modelo empieza a ser autofinanciable.</p>
+          </article>
+          <article class="card">
+            <h3>Mes 6-12</h3>
+            <p>Pedido lote 2. Con el Kaneka® ya pagado, el margen DAY sube a 76,8% y el negocio empieza a respirar solo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner split">
+        <div>
+          <p class="eyebrow">06 · Track record</p>
+          <h2>Kōoch Sync no nace de cero.</h2>
+        </div>
+        <div>
+          <p class="lead">
+            Nace de una fundadora que ha construido Kōoch Green Cosmetics en España, la ha
+            mantenido viva atravesando ciclos adversos y ha ganado credibilidad en cuidado
+            femenino premium.
+          </p>
+          <div class="grid-2">
+            <div class="card"><h3>Operación real</h3><p>Experiencia gestionando proveedores, regulación, comunidad y financiación propia.</p></div>
+            <div class="card"><h3>Narrativa de marca</h3><p>Apariciones editoriales y premios trasladables a Kōoch Sync.</p></div>
+            <div class="card"><h3>Resiliencia</h3><p>La marca ha atravesado ciclos adversos y sigue operativa.</p></div>
+            <div class="card"><h3>Comunidad existente</h3><p>Base pequeña pero real de clientas que ya confían en la marca.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-inner split">
+        <div>
+          <p class="eyebrow">07 · Equipo</p>
+          <h2>Estructura ligera, especializada y escalable.</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Rol</th><th>Perfil</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Fundadora</td><td>Lissette: estrategia, marca, producto y operaciones. Más de 19 años en sistemas de gestión de calidad, seguridad de la información y medioambiente; origen directo de su forma de trabajar con proveedores, verificar ingredientes y garantizar compliance regulatorio. Fundadora de Kōoch Green Cosmetics.</td></tr>
+              <tr><td>Nutricionista asesora</td><td>Aval científico público, validación de fórmulas y comunicación. Perfil en proceso de confirmación.</td></tr>
+              <tr><td>Freelancers especializados</td><td>Diseño, desarrollo web, copywriting y paid media. Estructura variable hasta tener base económica sólida.</td></tr>
+              <tr><td>Fabricante</td><td>Fabricante seleccionado para lote 1 e ingredientes patentados con dosis verificables.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="propuesta">
+      <div class="section-inner proposal">
+        <div class="proposal-big">
+          <span class="eyebrow">08 · La propuesta</span>
+          <strong>50.000 €</strong>
+          <p>Inversión solicitada para estructura operativa 12 meses + lanzamiento DTC completo.</p>
+        </div>
+        <div class="card">
+          <h2>La fabricación del lote inaugural ya está cubierta.</h2>
+          <p>
+            La fundadora financia el primer lote: 500 unidades DAY + 600 unidades NIGHT,
+            aproximadamente 14.500 €. El inversor no cubre coste de producto; financia la
+            capacidad de lanzar, medir y demostrar PMF.
+          </p>
+          <p>
+            Lo que se busca no es solo capital. Se busca un inversor que haya construido
+            marca DTC desde cero y entienda lo que significa adquirir una primera clienta,
+            retenerla y convertirla en comunidad:
+            alguien cuya experiencia y red sean tan valiosas como el ticket. Si hay encaje
+            estratégico real, eso vale más que cualquier cantidad de dinero sin contexto.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Concepto</th><th>Detalle</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Estructura</td><td>Abierta a conversación: equity, préstamo participativo u otro formato según encaje estratégico.</td></tr>
+                <tr><td>Financiación complementaria</td><td>Se están explorando subvenciones y programas públicos compatibles con inversión privada. No es una apuesta; es parte de la forma de gestionar el negocio.</td></tr>
+                <tr><td>Lo que encuentra el inversor</td><td>Márgenes &gt;70%, fórmula verificable sin competidor directo claro en España y fundadora con track record real.</td></tr>
+                <tr><td>Próximo paso</td><td>Reunión privada para resolver dudas técnicas, financieras o de modelo de negocio.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: 18px">
+            <a class="button primary" href="mailto:hola@koochsync.com">Abrir conversación privada</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>Kōoch Sync · Anzara Labs · Documento confidencial · Mayo 2026</span>
+        <span>Lissette · Fundadora</span>
+      </div>
+    </footer>
+  </body>
+</html>
