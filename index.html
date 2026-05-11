@@ -374,9 +374,15 @@
         border-bottom: 0;
       }
 
-      @media (max-width: 640px) {
-        .table-stack { min-width: 0; }
+      .table-stack { min-width: 0; }
 
+      .table-stack td:first-child,
+      .table-stack th:first-child {
+        width: 180px;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 640px) {
         .table-stack thead { display: none; }
 
         .table-stack tr {
@@ -899,15 +905,15 @@
           <h2>Estructura ligera, especializada y escalable.</h2>
         </div>
         <div class="table-wrap">
-          <table>
+          <table class="table-stack">
             <thead>
               <tr><th>Rol</th><th>Perfil</th></tr>
             </thead>
             <tbody>
-              <tr><td>Fundadora</td><td>Lissette: estrategia, marca, producto y operaciones. Más de 19 años en sistemas de gestión de calidad, seguridad de la información y medioambiente; origen directo de su forma de trabajar con proveedores, verificar ingredientes y garantizar compliance regulatorio. Fundadora de Kōoch Green Cosmetics.</td></tr>
-              <tr><td>Nutricionista asesora</td><td>Aval científico público, validación de fórmulas y comunicación. Perfil en proceso de confirmación.</td></tr>
-              <tr><td>Freelancers especializados</td><td>Diseño, desarrollo web, copywriting y paid media. Estructura variable hasta tener base económica sólida.</td></tr>
-              <tr><td>Fabricante</td><td>Fabricante seleccionado para lote 1 e ingredientes patentados con dosis verificables.</td></tr>
+              <tr><td data-label="Rol">Fundadora</td><td data-label="Perfil">Lissette: estrategia, marca, producto y operaciones. Más de 19 años en sistemas de gestión de calidad, seguridad de la información y medioambiente; origen directo de su forma de trabajar con proveedores, verificar ingredientes y garantizar compliance regulatorio. Fundadora de Kōoch Green Cosmetics.</td></tr>
+              <tr><td data-label="Rol">Nutricionista asesora</td><td data-label="Perfil">Aval científico público, validación de fórmulas y comunicación. Perfil en proceso de confirmación.</td></tr>
+              <tr><td data-label="Rol">Freelancers especializados</td><td data-label="Perfil">Diseño, desarrollo web, copywriting y paid media. Estructura variable hasta tener base económica sólida.</td></tr>
+              <tr><td data-label="Rol">Fabricante</td><td data-label="Perfil">Fabricante seleccionado para lote 1 e ingredientes patentados con dosis verificables.</td></tr>
             </tbody>
           </table>
         </div>
