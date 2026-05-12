@@ -236,6 +236,29 @@
         font-size: 0.9rem;
       }
 
+      .system-visual {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .system-visual img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 260px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .system-visual .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
       .facts {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -549,7 +572,8 @@
         .gtm-grid,
         .role-grid,
         .proposal-grid,
-        .proposal {
+        .proposal,
+        .system-visual {
           grid-template-columns: 1fr;
         }
 
@@ -620,10 +644,10 @@
           </div>
         </div>
         <aside class="hero-card">
-          <img src="kooch-sync-den-product-mockup.png" alt="Mockup provisional DAY y NIGHT" />
+          <img src="kooch-sync-day-night-packaging.png" alt="Mockup provisional Kōoch Sync DAY y NIGHT" />
           <p>
-            Mockup visual provisional. La conversación actual es de negocio, inversión,
-            validación DTC y credibilidad científica; el packaging final vendrá después.
+            Visual provisional de packaging DAY + NIGHT. La decisión de inversión sigue
+            centrada en validación DTC, recompra, compliance y credibilidad científica.
           </p>
         </aside>
       </div>
@@ -720,6 +744,22 @@
             </p>
             <p class="muted">Glicina 3.500 mg + Myo-Inositol 2 g + KSM-66® + Puretheanine®.</p>
           </article>
+        </div>
+        <div class="system-visual">
+          <img src="kooch-sync-ingredient-orbit.png" alt="Cápsula e ingredientes activos Kōoch Sync" />
+          <div class="card">
+            <span class="status">Formulación</span>
+            <h3>Ingredientes con nombre y apellido.</h3>
+            <p>
+              La narrativa visual acompaña la tesis del plan: menos claims grandilocuentes
+              y más ingredientes reconocibles, dosis reales y una arquitectura DAY + NIGHT
+              fácil de explicar a una primera clienta.
+            </p>
+            <p class="muted">
+              La imagen apoya la conversación de producto, pero no sustituye la validación
+              regulatoria ni el cierre final de packaging.
+            </p>
+          </div>
         </div>
       </div>
     </section>
