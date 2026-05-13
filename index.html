@@ -473,6 +473,59 @@
         line-height: 1;
       }
 
+      .chart-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .chart-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 20px;
+        background: var(--paper-card);
+      }
+
+      .chart-card h3 {
+        margin-bottom: 14px;
+        color: var(--green);
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr) 90px;
+        gap: 12px;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 0.9rem;
+      }
+
+      .bar-track {
+        height: 12px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: var(--kooch-green-mist);
+      }
+
+      .bar-fill {
+        display: block;
+        height: 100%;
+        width: var(--w);
+        border-radius: inherit;
+        background: var(--kooch-green-deep);
+      }
+
+      .bar-fill.negative {
+        background: var(--rosa-arena);
+      }
+
+      .bar-value {
+        color: rgba(46, 46, 46, 0.72);
+        text-align: right;
+        white-space: nowrap;
+      }
+
       .callout {
         border-left: 4px solid var(--rosa-arena);
         margin-top: 18px;
@@ -572,6 +625,7 @@
         .gtm-grid,
         .role-grid,
         .proposal-grid,
+        .chart-grid,
         .proposal,
         .system-visual {
           grid-template-columns: 1fr;
@@ -637,10 +691,10 @@
           </p>
           <a class="button light" href="#propuesta">Ver propuesta</a>
           <div class="facts">
-            <div class="fact"><strong>50.000 €</strong>Inversión buscada</div>
+            <div class="fact"><strong>73.500 €</strong>Inversión BA buscada</div>
             <div class="fact"><strong>8%</strong>Participación ofrecida</div>
-            <div class="fact"><strong>625.000 €</strong>Valoración post-money implícita</div>
-            <div class="fact"><strong>DTC</strong>Canal exclusivo de lanzamiento</div>
+            <div class="fact"><strong>918.750 €</strong>Valoración post-money implícita</div>
+            <div class="fact"><strong>90.000 €</strong>Capital total con aportación fundadora</div>
           </div>
         </div>
         <aside class="hero-card">
@@ -802,10 +856,10 @@
             Ese es el dato que el lote 1 debe demostrar.
           </p>
         </div>
-          <div class="metrics-grid">
+        <div class="metrics-grid">
           <div class="metric"><strong>25-45 €</strong><span>CAC estimado DTC España</span></div>
           <div class="metric"><strong>~240 €</strong><span>LTV neto a 3 meses con stack</span></div>
-          <div class="metric"><strong>~6,9x</strong><span>LTV:CAC con CAC midpoint 35 €</span></div>
+          <div class="metric"><strong>~8,6x</strong><span>LTV:CAC con CAC base 28 €</span></div>
           <div class="metric"><strong>43.545 €</strong><span>Revenue neto potencial lote 1</span></div>
         </div>
       </div>
@@ -819,23 +873,23 @@
               <tr><th>Producto</th><th>Revenue neto</th><th>COGS lote 1</th><th>Margen lote 1</th><th>Margen lote 2+</th></tr>
             </thead>
             <tbody>
-              <tr><td>DAY · 22 tomas</td><td>44,55 €</td><td>18,35 € *</td><td>58,8%</td><td>74,5%</td></tr>
-              <tr><td>NIGHT · 30 tomas</td><td>35,45 €</td><td>8,89 €</td><td>74,9%</td><td>74,9%</td></tr>
-              <tr><td>Stack DAY + NIGHT</td><td>80 €</td><td>—</td><td>~66,7%</td><td>~74,7%</td></tr>
+              <tr><td>DAY · 22 tomas</td><td>44,55 €</td><td>16,08 €</td><td>63,9%</td><td>65,5%</td></tr>
+              <tr><td>NIGHT · 30 tomas</td><td>35,45 €</td><td>13,37 €</td><td>62,3%</td><td>64,3%</td></tr>
+              <tr><td>Stack DAY + NIGHT</td><td>80 €</td><td>—</td><td>~63,2%</td><td>~64,9%</td></tr>
             </tbody>
           </table>
         </div>
         <p class="muted" style="margin-top: 12px">
           * Revenue neto empresa, excluido IVA del 10%. PVP consumidor: DAY 49 €, NIGHT 39 €, Stack 88 €.
-          COGS lote 1 DAY incluye el excedente Kaneka® Ubiquinol reservado para lote 2.
+          COGS = fabricación + fulfillment estimado de 3,50 €/ud + pasarela de pago del 2,5% sobre PVP.
         </p>
         <div class="callout">
           <h3>MOQ Kaneka®: controlar stock sin perder inversión.</h3>
           <p>
             El Kaneka® Ubiquinol tiene un MOQ de 5 kg. Para 500 unidades DAY solo se necesitan
             aproximadamente 1,5 kg. En vez de fabricar más volumen del necesario, el excedente
-            estimado de 3,5 kg queda reservado para el lote 2: primer lote pequeño, riesgo de
-            inventario controlado y margen DAY más alto en la siguiente producción.
+            estimado queda reservado para el siguiente pedido: primer lote pequeño, riesgo de
+            inventario controlado y capital ya invertido en materia prima de continuidad.
           </p>
         </div>
       </div>
@@ -850,8 +904,8 @@
         <div>
           <p class="lead">
             El control de la relación con la clienta y del margen son prioritarios.
-            Los 50.000 € financian estructura operativa y lanzamiento; la fabricación
-            del lote inaugural ya está financiada por la fundadora.
+            La inversión de 73.500 € financia lanzamiento y escala en dos tramos; la
+            fabricación del lote inaugural ya está financiada por la fundadora.
           </p>
           <p>
             La segunda fase del canal incorpora prescripción profesional: coaches deportivos,
@@ -861,9 +915,9 @@
           </p>
           <div class="gtm-grid">
             <article class="gtm-item">
-              <strong>~30.000 €</strong>
-              <h3>Estructura operativa 12 meses</h3>
-              <p>Coste empresa: salario bruto fundadora + Seguridad Social. Runway para demostrar PMF sin presión.</p>
+              <strong>~52.000 €</strong>
+              <h3>Estructura operativa 18 meses</h3>
+              <p>Salario fundadora, estructura M8+ condicionada a tracción y runway hasta acercarse al break-even.</p>
             </article>
             <article class="gtm-item">
               <strong>~2.000 €</strong>
@@ -900,6 +954,20 @@
               <h3>Herramientas, ops y contingencia</h3>
               <p>E-commerce, analítica, email platform e imprevistos operativos.</p>
             </article>
+            <article class="gtm-item">
+              <strong>73.500 €</strong>
+              <h3>Total inversión BA</h3>
+              <p>Tramo A de 35.000 € en M1 y Tramo B de 38.500 € en M7 condicionado a tracción.</p>
+            </article>
+          </div>
+          <div class="chart-card" style="margin-top: 18px">
+            <h3>Despliegue visual de fondos</h3>
+            <div class="bar-row"><span>Estructura</span><div class="bar-track"><span class="bar-fill" style="--w:100%"></span></div><span class="bar-value">~52k €</span></div>
+            <div class="bar-row"><span>Paid social</span><div class="bar-track"><span class="bar-fill" style="--w:15%"></span></div><span class="bar-value">~8k €</span></div>
+            <div class="bar-row"><span>Micro-influencers</span><div class="bar-track"><span class="bar-fill" style="--w:8%"></span></div><span class="bar-value">~4k €</span></div>
+            <div class="bar-row"><span>Nutrición</span><div class="bar-track"><span class="bar-fill" style="--w:4%"></span></div><span class="bar-value">~2k €</span></div>
+            <div class="bar-row"><span>Sampling</span><div class="bar-track"><span class="bar-fill" style="--w:4%"></span></div><span class="bar-value">~2k €</span></div>
+            <p class="muted">La inversión no compra inventario inicial: compra runway, aprendizaje de adquisición y prueba de retención.</p>
           </div>
         </div>
       </div>
@@ -924,7 +992,7 @@
           </article>
           <article class="card">
             <h3>Mes 6-12</h3>
-            <p>Pedido lote 2. Con el Kaneka® ya pagado, el margen DAY sube a 76,8% y el negocio empieza a respirar solo.</p>
+            <p>Pedido lote 2. Con el Kaneka® reservado, mejora la eficiencia de fabricación y el negocio prueba escala real.</p>
           </article>
         </div>
       </div>
@@ -981,29 +1049,50 @@
       <div class="section-inner split">
         <div>
           <p class="eyebrow">08 · Proyección financiera</p>
-          <h2>El año 1 valida. El año 2 cruza break-even.</h2>
+          <h2>El año 1 valida. El año 3 confirma el modelo base.</h2>
           <p class="lead">
             Modelo base construido sobre costes reales de fabricación, márgenes verificados
-            y adquisición DTC. La variable crítica no es el margen, sino la velocidad de adquisición
-            y la retención.
+            y adquisición DTC. La variable crítica no es el margen, sino la velocidad de
+            adquisición y la retención: por encima del 30% en segunda compra, la tesis cambia.
           </p>
         </div>
         <div class="metrics-grid">
-          <div class="metric"><strong>43.545 €</strong><span>Revenue neto año 1</span></div>
-          <div class="metric"><strong>-23.312 €</strong><span>EBITDA año 1 cubierto por inversión</span></div>
-          <div class="metric"><strong>174.180 €</strong><span>Revenue neto año 2 base</span></div>
-          <div class="metric"><strong>+22.204 €</strong><span>EBITDA año 2 base</span></div>
-          <div class="metric"><strong>435.450 €</strong><span>Revenue neto año 3 base</span></div>
-          <div class="metric"><strong>+168.524 €</strong><span>EBITDA año 3 base</span></div>
+          <div class="metric"><strong>62.927 €</strong><span>Revenue neto año 1</span></div>
+          <div class="metric"><strong>-54.871 €</strong><span>EBITDA año 1: fase de inversión</span></div>
+          <div class="metric"><strong>130.000 €</strong><span>Revenue neto año 2 base</span></div>
+          <div class="metric"><strong>-24.000 €</strong><span>EBITDA año 2 base</span></div>
+          <div class="metric"><strong>200.000 €</strong><span>Revenue neto año 3 base</span></div>
+          <div class="metric"><strong>+12.000 €</strong><span>EBITDA año 3 base</span></div>
         </div>
       </div>
       <div class="section-inner" style="margin-top: 26px">
+        <div class="chart-grid">
+          <article class="chart-card">
+            <h3>P&L base a 3 años</h3>
+            <div class="bar-row"><span>Año 1 revenue</span><div class="bar-track"><span class="bar-fill" style="--w:31%"></span></div><span class="bar-value">62,9k €</span></div>
+            <div class="bar-row"><span>Año 2 revenue</span><div class="bar-track"><span class="bar-fill" style="--w:65%"></span></div><span class="bar-value">130k €</span></div>
+            <div class="bar-row"><span>Año 3 revenue</span><div class="bar-track"><span class="bar-fill" style="--w:100%"></span></div><span class="bar-value">200k €</span></div>
+            <div class="bar-row"><span>EBITDA A1</span><div class="bar-track"><span class="bar-fill negative" style="--w:55%"></span></div><span class="bar-value">-54,9k €</span></div>
+            <div class="bar-row"><span>EBITDA A2</span><div class="bar-track"><span class="bar-fill negative" style="--w:24%"></span></div><span class="bar-value">-24k €</span></div>
+            <div class="bar-row"><span>EBITDA A3</span><div class="bar-track"><span class="bar-fill" style="--w:12%"></span></div><span class="bar-value">+12k €</span></div>
+          </article>
+          <article class="chart-card">
+            <h3>Escenarios año 3</h3>
+            <div class="bar-row"><span>Conservador</span><div class="bar-track"><span class="bar-fill" style="--w:39%"></span></div><span class="bar-value">110k €</span></div>
+            <div class="bar-row"><span>Base</span><div class="bar-track"><span class="bar-fill" style="--w:71%"></span></div><span class="bar-value">200k €</span></div>
+            <div class="bar-row"><span>Optimista</span><div class="bar-track"><span class="bar-fill" style="--w:100%"></span></div><span class="bar-value">280k €</span></div>
+            <p class="muted">
+              Break-even: mes 4-6 del año 3 en conservador, mes 1-2 del año 3 en base
+              y mes 1-2 del año 2 en optimista.
+            </p>
+          </article>
+        </div>
         <div class="callout">
-          <h3>Break-even operativo: mes 6-8 del año 2.</h3>
+          <h3>Break-even EBITDA mensual: estimado alrededor del mes 21.</h3>
           <p>
-            Incluso en escenario conservador, el modelo proyecta EBITDA positivo en año 2.
-            El negocio no requiere más inversión para sobrevivir; requiere tiempo para demostrar
-            retención y convertir la primera base de clientas en comunidad recurrente.
+            El break-even ex-salario fundadora aparece antes, alrededor del mes 10. El capital
+            cubre la fase de validación; la palanca crítica es demostrar recompra y retención
+            antes de escalar adquisición.
           </p>
         </div>
       </div>
@@ -1013,8 +1102,8 @@
       <div class="section-inner">
         <div class="proposal-big" style="margin-bottom: 24px">
           <span class="eyebrow">09 · La propuesta</span>
-          <strong>50.000 €</strong>
-          <p>Inversión por el 8% de Anzara Labs. Valoración post-money implícita: 625.000 €.</p>
+          <strong>73.500 €</strong>
+          <p>Inversión por el 8% de Anzara Labs. Valoración post-money implícita: 918.750 €.</p>
         </div>
         <div class="card">
           <h2>La fabricación del lote inaugural ya está cubierta.</h2>
@@ -1033,15 +1122,15 @@
           <div class="proposal-grid">
             <article class="proposal-item">
               <h3>Participación ofrecida</h3>
-              <p>8% del capital de Anzara Labs por una inversión de 50.000 €.</p>
+              <p>8% del capital de Anzara Labs por una inversión de 73.500 €.</p>
             </article>
             <article class="proposal-item">
               <h3>Valoración implícita</h3>
-              <p>625.000 € post-money, entrada favorecida frente al comparable más directo de mercado.</p>
+              <p>918.750 € post-money, por debajo del comparable más directo de mercado en pre-seed.</p>
             </article>
             <article class="proposal-item">
               <h3>Estructura</h3>
-              <p>Abierta a conversación: equity, préstamo participativo u otro formato según encaje estratégico.</p>
+              <p>Equity en dos tramos: 35.000 € en M1 y 38.500 € en M7 condicionado a tracción.</p>
             </article>
             <article class="proposal-item">
               <h3>Cláusula de conversión</h3>
@@ -1053,11 +1142,11 @@
             </article>
             <article class="proposal-item">
               <h3>Lo que encuentra el inversor</h3>
-              <p>Márgenes brutos altos, fórmula verificable sin competidor directo claro en España y fundadora con track record real.</p>
+              <p>Márgenes &gt;63% desde lote 1, fórmula verificable sin competidor directo claro en España y fundadora con track record real.</p>
             </article>
             <article class="proposal-item">
               <h3>Retorno potencial</h3>
-              <p>Escenario base año 3: valoración implícita ~800.000 €, 8% = 64.000 €; optimista: hasta ~2,2x sobre 50K.</p>
+              <p>Escenario base año 3: 8% = 160.000 € sobre valoración implícita de ~2M; retorno aproximado 2,2x.</p>
             </article>
             <article class="proposal-item">
               <h3>Próximo paso</h3>
